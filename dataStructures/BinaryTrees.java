@@ -32,9 +32,33 @@ public class BinaryTrees {
         }
     }
 
+    public static void preOrderTraversal(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        System.out.print(root.data + " ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    public static void inOrderTraversal(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        inOrderTraversal(root.left);
+        System.out.print(root.data + " ");
+        inOrderTraversal(root.right);
+    }
+
     public static void main(String[] args) {
-        int nodes[] = { 9, 8, 7, -1, -1, 5, -1, -1, 2, -1, 6, -1, -1, 4, -1, 1 };
+        int nodes[] = { 9, 8, 7, -1, -1, 4, -1, -1, 5, -1, 2, -1, -1 };
 
         Node rootNode = BinaryTree.buildBinaryTree(nodes);
+
+        preOrderTraversal(rootNode);
+        System.out.println();
+        inOrderTraversal(rootNode);
     }
 }
