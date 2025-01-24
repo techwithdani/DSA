@@ -52,6 +52,16 @@ public class BinaryTrees {
         inOrderTraversal(root.right);
     }
 
+    public static void postOrderTraversal(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args) {
         int nodes[] = { 9, 8, 7, -1, -1, 4, -1, -1, 5, -1, 2, -1, -1 };
 
